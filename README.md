@@ -1,8 +1,10 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration)
 
 
-# simple-clock-card
-A text based simple clock for people who use Home Assistant on a panel
+# simple-clock-card-timezone
+A text based simple clock for people who use Home Assistant on a panel with the option to set the timezone
+
+eg. time_zone: "America/New_York"
 
 Based on https://github.com/arjhun/Homeassistant-Lovelace-Cards @arjhun
 
