@@ -6,8 +6,6 @@ A text based simple clock for people who use Home Assistant on a panel with the 
 Default is Europe/Berlin
 eg. time_zone: "America/New_York"
 
-Based on https://github.com/arjhun/Homeassistant-Lovelace-Cards @arjhun
-
 
 ![24h clock](https://i.imgur.com/n37gyxZ.png)  
 
