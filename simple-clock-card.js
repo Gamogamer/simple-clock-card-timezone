@@ -26,27 +26,37 @@ class SimpleClockCard extends HTMLElement {
 				}
 				return i;
 			}
+            function startTime() {
+                const timeZone = config.time_zone || "Europe/Berlin"; // Change to your preferred time zone
 
-			function startTime() {
-				var today = new Date(),
-				h = today.getHours(),
-				m = today.getMinutes(),
-				s = today.getSeconds(),
-				p = ( h < 12 ) ? "AM" : "PM";
-				m = addZero(m);
-				s = addZero(s);
+                let now = new Date().toLocaleString("en-US", { timeZone: timeZone });
+                let today = new Date(now); // Convert to Date object
 
-				let  use_military = config.use_military !== undefined ? config.use_military : true;
-				let  hide_seconds = config.hide_seconds !== undefined ? config.hide_seconds : false;
-				let  lead_zero = config.lead_zero !== undefined ? config.lead_zero : false;
+                let h = today.getHours(),
+                    m = today.getMinutes(),
+                    s = today.getSeconds(),
+                    p = h < 12 ? "AM" : "PM";
 
-				let time_str =  (use_military ? (lead_zero ? addZero(h) : h) : ((h + 11) % 12) + 1 ) +
-                   ":" +
-                   m +
-                   (hide_seconds ? "" : ":" + s ) +
-                   (use_military ? " " : " " + p );
-				content.innerHTML = time_str;
-			}
+                function addZero(i) {
+                    return i < 10 ? "0" + i : i;
+                }
+
+                m = addZero(m);
+                s = addZero(s);
+
+                let use_military = config.use_military !== undefined ? config.use_military : true;
+                let hide_seconds = config.hide_seconds !== undefined ? config.hide_seconds : false;
+                let lead_zero = config.lead_zero !== undefined ? config.lead_zero : false;
+
+                let time_str =
+                    (use_military ? (lead_zero ? addZero(h) : h) : ((h + 11) % 12) + 1) +
+                    ":" +
+                    m +
+                    (hide_seconds ? "" : ":" + s) +
+                    (use_military ? " " : " " + p);
+
+                content.innerHTML = time_str;
+            }
 		}
 	}
 
