@@ -2,8 +2,8 @@
 
 
 # simple-clock-card-timezone
-A text based simple clock for people who use Home Assistant on a panel with the option to set the timezone
-
+A text based simple clock for people who use Home Assistant on a panel with the option to set the timezone.
+Default is Europe/Berlin
 eg. time_zone: "America/New_York"
 
 Based on https://github.com/arjhun/Homeassistant-Lovelace-Cards @arjhun
